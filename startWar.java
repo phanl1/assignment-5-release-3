@@ -1,6 +1,7 @@
 
 
 public class startWar {
+
     Survivor[] survivors;
     Zombie[] zombies;
 
@@ -9,7 +10,7 @@ public class startWar {
         this.zombies = zombies;
     }
 
-    void Start(){
+    void Start() {
         printInitialMessage(survivors, zombies);
 
         while (survivors.length > numDeadSurvivors(survivors) && zombies.length > numDeadZombies(zombies)) {
@@ -21,7 +22,7 @@ public class startWar {
 
     static void printInitialMessage(Survivor[] survivors, Zombie[] zombies) {
         int numSurvivors = survivors.length;
-        int numZombies =  zombies.length;
+        int numZombies = zombies.length;
         int numChildren = getChildCount(survivors);
         int numTeachers = getTeacherCount(survivors);
         int numSoldiers = getSoldierCount(survivors);
@@ -121,7 +122,7 @@ public class startWar {
         int numCommonInfected = 0;
 
         for (Zombie zombie : zombies) {
-            if(zombie instanceof CommonInfected){
+            if (zombie instanceof CommonInfected) {
                 numCommonInfected++;
             }
 
@@ -162,8 +163,7 @@ public class startWar {
                                         + " killed " + zombie.getName()
                                         + " with a " + weapon.getWeaponName() + ".");
                             }
-                        }
-                        else {
+                        } else {
                             System.out.println("\t" + survivor.getName()
                                     + " tried to attack " + zombie.getName()
                                     + " with a " + weapon.getWeaponName()
